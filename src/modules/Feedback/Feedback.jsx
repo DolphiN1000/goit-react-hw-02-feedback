@@ -8,37 +8,35 @@ class Feedback extends Component {
     bad: 0,
   };
 
-// increaseGood = () => {
-//     this.setState(prevState => {
-//         return {good: prevState.good + 1 }
-//     })
-// }
+  // increaseGood = () => {
+  //     this.setState(prevState => {
+  //         return {good: prevState.good + 1 }
+  //     })
+  // }
 
-// incraseNeutral = () => {
-//     this.setState(prevState => {
-//         return {neutral: prevState.neutral + 1} 
-//     })
-// }
+  // incraseNeutral = () => {
+  //     this.setState(prevState => {
+  //         return {neutral: prevState.neutral + 1}
+  //     })
+  // }
 
-// incraseBad = () => {
-//     this.setState(prevState => {
-//         return {bad: prevState.bad + 1}
-//     }
-//         )
-// }
+  // incraseBad = () => {
+  //     this.setState(prevState => {
+  //         return {bad: prevState.bad + 1}
+  //     }
+  //         )
+  // }
 
-incraseValue(name) {
+  incraseValue(name) {
     this.setState(prevState => {
-        return {
-            [name]: prevState[name] + 1
-        }
-    }
-
-    )
-}
+      return {
+        [name]: prevState[name] + 1,
+      };
+    });
+  }
 
   render() {
-    const {good, neutral, bad} = this.state
+    const { good, neutral, bad } = this.state;
     return (
       <>
         <h2>Feedback</h2>
@@ -47,9 +45,24 @@ incraseValue(name) {
           {/* <button className={styles.button} onClick={this.increaseGood}>Good</button>
           <button className={styles.button} onClick={this.incraseNeutral}>Neutral</button>
           <button className={styles.button} onClick={this.incraseBad}>Bad</button> */}
-             <button className={styles.button} onClick={() => this.incraseValue('good')}>Good</button>
-          <button className={styles.button} onClick={() => this.incraseValue('neutral')}>Neutral</button>
-          <button className={styles.button} onClick={() => this.incraseValue('bad')}>Bad</button>
+          <button
+            className={styles.button}
+            onClick={() => this.incraseValue('good')}
+          >
+            Good
+          </button>
+          <button
+            className={styles.button}
+            onClick={() => this.incraseValue('neutral')}
+          >
+            Neutral
+          </button>
+          <button
+            className={styles.button}
+            onClick={() => this.incraseValue('bad')}
+          >
+            Bad
+          </button>
         </div>
         <div>
           <h3>Statistic</h3>
