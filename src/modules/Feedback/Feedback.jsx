@@ -1,10 +1,12 @@
 import { Component } from 'react';
-import styles from './feedback.module.scss';
+
 import Section from './Section/Section';
 import FeedbackVariants from './FeedbackVariants/FeedbackVariants';
 import Statistics from './Statistics/Statistics';
-import '../../shared/styles/styles.scss';
 import Notification from 'shared/components/Notification/Notification';
+
+import '../../shared/styles/styles.scss';
+import styles from './feedback.module.scss';
 
 const feedbackOptions = ['good', 'neutral', 'bad'];
 const message = 'There is no feedback';
