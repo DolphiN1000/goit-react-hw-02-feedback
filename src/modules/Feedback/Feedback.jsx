@@ -8,16 +8,17 @@ import Notification from 'shared/components/Notification/Notification';
 import '../../shared/styles/styles.scss';
 import styles from './feedback.module.scss';
 
-const feedbackOptions = ['good', 'neutral', 'bad'];
+const feedbackOption = ['good', 'neutral', 'bad'];
+const initialState = feedbackOption.reduce((a, v) => ({ ...a, [v]: 0 }), {});
 const message = 'There is no feedback';
-// const statisticOptions = [];
 
 class Feedback extends Component {
-  state = {
-    good: 0,
-    neutral: 0,
-    bad: 0,
-  };
+  state = initialState;
+
+  // feedbackOptions = () => {
+  //   const feedbackOptions = Object.keys(this.state);
+  //   return feedbackOptions;
+  // };
 
   incraseValue = name => {
     this.setState(prevState => {
@@ -47,11 +48,13 @@ class Feedback extends Component {
     const { good, neutral, bad } = this.state;
     const total = this.countTotalFeedback();
     const feedbackPercentage = this.countFeedbackPercentage('good');
+    // const feedbackOptions = this.feedbackOptions();
+
     return (
       <div className={styles.container}>
         <Section title="Please leave feedback">
           <FeedbackVariants
-            options={feedbackOptions}
+            options={Object.keys(this.state)}
             leaveFeedback={this.incraseValue}
           />
         </Section>
